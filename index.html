@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudyBuddy Pro - Advanced Study Management System</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="StudyBuddy Pro is an advanced webapp for study management, featuring routines, missions, notes, analytics, and productivity tools to help students succeed.">
+    <meta name="keywords" content="study app, productivity tool, study routine, mission tracker, notes manager, study analytics, student webapp, PWA">
+    <meta name="author" content="Urfa Hasan Fattah">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OpenGraph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="StudyBuddy Pro - Advanced Study Management System">
+    <meta property="og:description" content="Organize your studies with routines, missions, notes, and analytics. Boost productivity with this installable webapp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com"> <!-- Replace with actual URL -->
+    <meta property="og:image" content="https://yourdomain.com/icon-512.png"> <!-- Replace with actual image URL -->
+    <meta property="og:site_name" content="StudyBuddy Pro">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StudyBuddy Pro - Advanced Study Management System">
+    <meta name="twitter:description" content="Organize your studies with routines, missions, notes, and analytics. Boost productivity with this installable webapp.">
+    <meta name="twitter:image" content="https://yourdomain.com/icon-512.png"> <!-- Replace with actual image URL -->
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#667eea">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* Existing styles remain unchanged */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         * {
@@ -2550,6 +2578,17 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.add('hidden');
         }
+        if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
     </script>
 </body>
 </html>
